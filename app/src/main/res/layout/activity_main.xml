@@ -17,7 +17,7 @@
             android:paddingLeft="0sp"
             android:text="@string/welcome_to_the_rick_and_morty_app"
             android:textAlignment="center"
-            android:textSize="38sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

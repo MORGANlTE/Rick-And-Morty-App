@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="whiteText">
         <item name="android:textColor">#ffffff</item>
     </style>
+
     <style name="subtitleText">
         <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">28sp</item>
-    </style
-        >
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 
 </resources>
