@@ -7,6 +7,10 @@ android {
     namespace 'com.rl.rickandmortyapp'
     compileSdk 32
 
+    dataBinding{
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.rl.rickandmortyapp"
         minSdk 21
