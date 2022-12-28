@@ -3,5 +3,10 @@
     <style name="whiteText">
         <item name="android:textColor">#ffffff</item>
     </style>
+    <style name="subtitleText">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">28sp</item>
+    </style
+        >
 
 </resources>
