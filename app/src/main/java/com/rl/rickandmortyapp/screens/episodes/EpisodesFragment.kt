@@ -20,7 +20,6 @@ class EpisodesFragment : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentEpisodesBinding>(inflater,
             R.layout.fragment_episodes,container,false)
-        Log.i("EpisodesFragment", "AAA")
 
         return binding.root
     }

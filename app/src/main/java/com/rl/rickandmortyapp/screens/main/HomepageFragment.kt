@@ -33,7 +33,6 @@ class HomepageFragment : Fragment() {
     }
 
     private fun setupButtons() {
-        Log.i("HomepageFragment", "Setting up buttons")
 
         //OnclickListener for the button to the episodes
         binding.episodesButton.setOnClickListener { view: View ->
