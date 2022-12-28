@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homepageFragment"
         android:name="com.rl.rickandmortyapp.screens.main.HomepageFragment"
-        android:label="fragment_homepage"
+        android:label="Rick and Morty app"
         tools:layout="@layout/fragment_homepage" >
         <action
             android:id="@+id/action_homepageFragment_to_episodesFragment"
@@ -16,5 +16,5 @@
     <fragment
         android:id="@+id/episodesFragment8"
         android:name="com.rl.rickandmortyapp.screens.episodes.EpisodesFragment"
-        android:label="EpisodesFragment" />
+        android:label="Episodes" />
 </navigation>

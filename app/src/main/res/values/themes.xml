@@ -13,4 +13,13 @@
         <item name="android:statusBarColor">?attr/colorSecondaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.RickAndMortyApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.RickAndMortyApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.RickAndMortyApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
