@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.rl.rickandmortyapp.R
+import com.rl.rickandmortyapp.databinding.FragmentHomepageBinding
 
 class HomepageFragment : Fragment() {
 
@@ -13,8 +15,10 @@ class HomepageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homepage, container, false)
+
+        val binding = DataBindingUtil.inflate<FragmentHomepageBinding>(inflater,
+            R.layout.fragment_homepage,container,false)
+        return binding.root
     }
 
 }
