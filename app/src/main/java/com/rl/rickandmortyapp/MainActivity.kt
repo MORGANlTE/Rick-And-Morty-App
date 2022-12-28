@@ -2,6 +2,7 @@ package com.rl.rickandmortyapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
 import com.rl.rickandmortyapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
