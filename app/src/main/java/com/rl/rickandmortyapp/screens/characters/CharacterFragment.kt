@@ -25,10 +25,15 @@ class CharacterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentCharacterBinding>(inflater,
-            R.layout.fragment_character,container,false)
+        //get binding & inflate fragment
+        val binding = DataBindingUtil.inflate<FragmentCharacterBinding>(
+            inflater,
+            R.layout.fragment_character, container, false
+        )
+
         //set the menu to visible
         setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -40,8 +45,7 @@ class CharacterFragment : Fragment() {
 
     //override to set the action on the menubuttons to their respective destination
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.
-        onNavDestinationSelected(item,requireView().findNavController())
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
