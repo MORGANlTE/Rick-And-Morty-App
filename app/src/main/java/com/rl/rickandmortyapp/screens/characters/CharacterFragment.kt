@@ -5,14 +5,14 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
+import com.rl.rickandmortyapp.database.CharacterDatabase
 import com.rl.rickandmortyapp.databinding.FragmentCharacterBinding
 
 class CharacterFragment : Fragment() {
-
-    lateinit var characterViewModel: CharacterViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,12 +27,19 @@ class CharacterFragment : Fragment() {
         //set the menu to visible
         setHasOptionsMenu(true)
 
+        //get the application context
+        val application = requireNotNull(this.activity).application
+        // get/create the db
+        val dataSouce = CharacterDatabase.getInstance(application).characterDatabaseDao
+        //create an instance of the ViewModel factory
+        val viewModelFactory = CharacterViewModelFactory(dataSouce, application)
+
         //get the viewmodel
-        val vm: CharacterViewModel by activityViewModels()
-        //set the viewmodel
-        characterViewModel = vm
+        val characterViewModel =
+            ViewModelProvider(this, viewModelFactory).get(CharacterViewModel::class.java)
 
         characterViewModel.logIets()
+
 
         return binding.root
     }
