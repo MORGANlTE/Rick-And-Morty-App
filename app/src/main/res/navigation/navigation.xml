@@ -23,6 +23,6 @@
     <fragment
         android:id="@+id/characterFragment"
         android:name="com.rl.rickandmortyapp.screens.characters.CharacterFragment"
-        android:label="fragment_character"
+        android:label="@string/characters"
         tools:layout="@layout/fragment_character" />
 </navigation>
