@@ -14,7 +14,7 @@ interface CharacterDatabaseDao {
     suspend fun insert(character: Character)
 
     //get all of the characters in the db
-    @Query("SELECT * FROM character_table ORDER BY characterId DESC")
+    @Query("SELECT * FROM character_table ORDER BY characterId ASC")
     fun getAllCharacters(): LiveData<List<Character>>
 
 }
