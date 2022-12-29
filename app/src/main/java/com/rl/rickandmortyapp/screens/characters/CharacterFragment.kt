@@ -37,8 +37,12 @@ class CharacterFragment : Fragment() {
         //get the viewmodel
         val characterViewModel =
             ViewModelProvider(this, viewModelFactory).get(CharacterViewModel::class.java)
-
+        //testen of t werkt
         characterViewModel.logIets()
+
+        //create and set the adapter
+        val adapter = CharacterAdapter()
+        binding.characterRecycler.adapter = adapter
 
 
         return binding.root
