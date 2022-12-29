@@ -1,9 +1,9 @@
-package com.rl.rickandmortyapp.screens.characters
+package com.rl.rickandmortyapp.screens.character
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.rl.rickandmortyapp.database.CharacterDatabaseDao
+import com.rl.rickandmortyapp.database.character.CharacterDatabaseDao
 
 class CharacterViewModelFactory(
     private val dataSource: CharacterDatabaseDao,

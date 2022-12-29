@@ -1,15 +1,12 @@
-package com.rl.rickandmortyapp.screens.characters
+package com.rl.rickandmortyapp.screens.character
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rl.rickandmortyapp.database.Character
-import com.rl.rickandmortyapp.database.CharacterDatabaseDao
+import com.rl.rickandmortyapp.database.character.Character
+import com.rl.rickandmortyapp.database.character.CharacterDatabaseDao
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.plus
 
 class CharacterViewModel(dataSource: CharacterDatabaseDao, application: Application) : ViewModel() {
 

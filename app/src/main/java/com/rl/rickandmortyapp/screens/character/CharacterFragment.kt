@@ -1,16 +1,15 @@
-package com.rl.rickandmortyapp.screens.characters
+package com.rl.rickandmortyapp.screens.character
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
-import com.rl.rickandmortyapp.database.CharacterDatabase
+import com.rl.rickandmortyapp.database.DatabaseRoom
 import com.rl.rickandmortyapp.databinding.FragmentCharacterBinding
 
 class CharacterFragment : Fragment() {
@@ -31,7 +30,7 @@ class CharacterFragment : Fragment() {
         //get the application context
         val application = requireNotNull(this.activity).application
         // get/create the db
-        val dataSouce = CharacterDatabase.getInstance(application).characterDatabaseDao
+        val dataSouce = DatabaseRoom.getInstance(application).characterDatabaseDao
         //create an instance of the ViewModel factory
         val viewModelFactory = CharacterViewModelFactory(dataSouce, application)
 

@@ -1,4 +1,4 @@
-package com.rl.rickandmortyapp.network
+package com.rl.rickandmortyapp.network.character
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi

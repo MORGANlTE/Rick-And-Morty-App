@@ -1,4 +1,4 @@
-package com.rl.rickandmortyapp.network
+package com.rl.rickandmortyapp.network.character
 
 import com.squareup.moshi.Json
 

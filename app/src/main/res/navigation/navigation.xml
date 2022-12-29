@@ -22,7 +22,7 @@
         android:label="Episodes" />
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.rl.rickandmortyapp.screens.characters.CharacterFragment"
+        android:name="com.rl.rickandmortyapp.screens.character.CharacterFragment"
         android:label="@string/characters"
         tools:layout="@layout/fragment_character" />
 </navigation>

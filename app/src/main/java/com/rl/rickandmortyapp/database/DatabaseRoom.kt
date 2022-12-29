@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.rl.rickandmortyapp.database.character.Character
+import com.rl.rickandmortyapp.database.character.CharacterDatabaseDao
 
 @Database(entities = [Character::class], version = 1, exportSchema = false)
-abstract class CharacterDatabase : RoomDatabase() {
+abstract class DatabaseRoom : RoomDatabase() {
 
     //connect DB with Dao
     abstract val characterDatabaseDao: CharacterDatabaseDao
@@ -18,9 +20,9 @@ abstract class CharacterDatabase : RoomDatabase() {
         // volatile: value will never be cached, all reads & writes are done from the main memory
         // -> changes made by one thread are visible to other threads
         @Volatile
-        private var INSTANCE: CharacterDatabase? = null
+        private var INSTANCE: DatabaseRoom? = null
 
-        fun getInstance(context: Context): CharacterDatabase {
+        fun getInstance(context: Context): DatabaseRoom {
             // Multiple threads can ask for the database at the same time, ensure we only initialize
             // it once by using synchronized. Only one thread may enter a synchronized block at a
             // time.
@@ -32,7 +34,7 @@ abstract class CharacterDatabase : RoomDatabase() {
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        CharacterDatabase::class.java,
+                        DatabaseRoom::class.java,
                         "character_database"
                     ).fallbackToDestructiveMigration().build()
                     INSTANCE = instance
