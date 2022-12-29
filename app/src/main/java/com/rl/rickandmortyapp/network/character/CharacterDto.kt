@@ -31,3 +31,16 @@ data class CharacterOriginDto (
     @Json(name = "name")
     val originName: String
 )
+
+fun List<CharacterDto>.asDatabase(): Array<com.rl.rickandmortyapp.database.character.Character> {
+    return this.map {
+        com.rl.rickandmortyapp.database.character.Character(
+            characterId = it.id.toLong(),
+            name = it.name,
+            status = it.status,
+            species = it.species,
+            image = it.image,
+            origin = it.origin.originName
+        )
+    }.toTypedArray()
+}

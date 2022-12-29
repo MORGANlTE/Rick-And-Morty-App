@@ -27,7 +27,8 @@ private val retrofit =
 
 //interface for the different HTTP methods
 interface CharacterApiService{
-    @GET
+//    @GET("?page=2")
+    @GET(".")
     fun getCharacters() : Deferred<CharacterResponse>
 }
 

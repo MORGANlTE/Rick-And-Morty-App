@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -27,18 +28,8 @@ class CharacterFragment : Fragment() {
         //set the menu to visible
         setHasOptionsMenu(true)
 
-        //get the application context
-        val application = requireNotNull(this.activity).application
-        // get/create the db
-        val dataSouce = DatabaseRoom.getInstance(application).characterDao
-        //create an instance of the ViewModel factory
-        val viewModelFactory = CharacterViewModelFactory(dataSouce, application)
+        val characterViewModel: CharacterViewModel by activityViewModels()
 
-        //get the viewmodel
-        val characterViewModel =
-            ViewModelProvider(this, viewModelFactory).get(CharacterViewModel::class.java)
-        //testen of t werkt
-        characterViewModel.logIets()
 
         //create and set the adapter
         val adapter = CharacterAdapter()

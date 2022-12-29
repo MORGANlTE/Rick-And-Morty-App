@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.rl.rickandmortyapp.database.character.Character
 import com.rl.rickandmortyapp.databinding.ListItemCharacterBinding
 
 class CharacterAdapter :
-    ListAdapter<Character, CharacterAdapter.ViewHolder>(CharacterDiffCallback()) {
+    ListAdapter<com.rl.rickandmortyapp.domain.Character, CharacterAdapter.ViewHolder>(
+        CharacterDiffCallback()
+    ) {
     // inflate the view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //inflate by using the from function (singleton companion object) in de ViewHolder class
@@ -39,7 +40,7 @@ class CharacterAdapter :
             }
         }
 
-        fun bind(item: Character) {
+        fun bind(item: com.rl.rickandmortyapp.domain.Character) {
             binding.character = item
             binding.executePendingBindings()
         }
@@ -47,17 +48,17 @@ class CharacterAdapter :
     }
 
     class CharacterDiffCallback :
-        DiffUtil.ItemCallback<Character>() {
+        DiffUtil.ItemCallback<com.rl.rickandmortyapp.domain.Character>() {
         override fun areItemsTheSame(
-            oldItem: Character,
-            newItem: Character
+            oldItem: com.rl.rickandmortyapp.domain.Character,
+            newItem: com.rl.rickandmortyapp.domain.Character
         ): Boolean {
             return oldItem.characterId == newItem.characterId
         }
 
         override fun areContentsTheSame(
-            oldItem: Character,
-            newItem: Character
+            oldItem: com.rl.rickandmortyapp.domain.Character,
+            newItem: com.rl.rickandmortyapp.domain.Character
         ): Boolean {
             return oldItem == newItem
         }

@@ -10,7 +10,7 @@ import androidx.room.Query
 interface CharacterDao {
     //to insert characters from api
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(character: Character)
+    suspend fun insertAll(characters: Array<Character>)
 
     //get all of the characters in the db
     @Query("SELECT * FROM character_table ORDER BY characterId ASC")
