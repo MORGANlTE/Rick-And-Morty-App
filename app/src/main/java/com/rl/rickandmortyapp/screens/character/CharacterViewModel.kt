@@ -5,10 +5,10 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rl.rickandmortyapp.database.character.Character
-import com.rl.rickandmortyapp.database.character.CharacterDatabaseDao
+import com.rl.rickandmortyapp.database.character.CharacterDao
 import kotlinx.coroutines.launch
 
-class CharacterViewModel(dataSource: CharacterDatabaseDao, application: Application) : ViewModel() {
+class CharacterViewModel(dataSource: CharacterDao, application: Application) : ViewModel() {
 
     val database = dataSource
     val characters = database.getAllCharacters()

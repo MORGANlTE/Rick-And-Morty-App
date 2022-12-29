@@ -30,7 +30,7 @@ class CharacterFragment : Fragment() {
         //get the application context
         val application = requireNotNull(this.activity).application
         // get/create the db
-        val dataSouce = DatabaseRoom.getInstance(application).characterDatabaseDao
+        val dataSouce = DatabaseRoom.getInstance(application).characterDao
         //create an instance of the ViewModel factory
         val viewModelFactory = CharacterViewModelFactory(dataSouce, application)
 

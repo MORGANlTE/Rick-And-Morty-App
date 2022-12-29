@@ -5,13 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.rl.rickandmortyapp.database.character.Character
-import com.rl.rickandmortyapp.database.character.CharacterDatabaseDao
+import com.rl.rickandmortyapp.database.character.CharacterDao
 
 @Database(entities = [Character::class], version = 1, exportSchema = false)
 abstract class DatabaseRoom : RoomDatabase() {
 
     //connect DB with Dao
-    abstract val characterDatabaseDao: CharacterDatabaseDao
+    abstract val characterDao: CharacterDao
 
     // companion object to add functions to the class (the class itself, not an instance of the class)
     companion object {
