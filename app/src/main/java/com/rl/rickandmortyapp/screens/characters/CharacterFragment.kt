@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -44,9 +45,20 @@ class CharacterFragment : Fragment() {
         val adapter = CharacterAdapter()
         binding.characterRecycler.adapter = adapter
 
+        //set an observer for the characters in the viewmodel
+        characterViewModel.characters.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                //tell the adapter that the list has changed
+                adapter.submitList(it)
+            }
+        })
+
+        //set the current activity as the lifecycle owner of the binding
+        // -> so that the binding can observe the livedata
 
         return binding.root
     }
+
 
     //inflate the menu resource file
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
