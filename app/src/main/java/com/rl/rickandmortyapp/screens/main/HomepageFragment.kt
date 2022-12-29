@@ -52,6 +52,12 @@ class HomepageFragment : Fragment() {
         binding.episodesButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homepageFragment_to_episodesFragment)
         }
+
+        //OnclickListener for the button to the characters
+        binding.charactersButton.setOnClickListener{ view: View ->
+            view.findNavController().navigate(R.id.action_homepageFragment_to_characterFragment)
+        }
+
     }
 
 }

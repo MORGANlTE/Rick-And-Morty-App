@@ -60,25 +60,25 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="credits">
+                  <entry key="characterFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="41" />
-                            <option name="y" value="401" />
+                            <option name="x" value="25" />
+                            <option name="y" value="304" />
                           </Point>
                         </option>
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="episodesFragment8">
+                  <entry key="episodesFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="224" />
-                            <option name="y" value="41" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -89,8 +89,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="40" />
-                            <option name="y" value="40" />
+                            <option name="x" value="-216" />
+                            <option name="y" value="13" />
                           </Point>
                         </option>
                         <option name="myPositions">
