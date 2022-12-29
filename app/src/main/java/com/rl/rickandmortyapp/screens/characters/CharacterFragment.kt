@@ -4,22 +4,15 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
 import com.rl.rickandmortyapp.databinding.FragmentCharacterBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CharacterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CharacterFragment : Fragment() {
+
+    lateinit var characterViewModel: CharacterViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +26,13 @@ class CharacterFragment : Fragment() {
 
         //set the menu to visible
         setHasOptionsMenu(true)
+
+        //get the viewmodel
+        val vm: CharacterViewModel by activityViewModels()
+        //set the viewmodel
+        characterViewModel = vm
+
+        characterViewModel.logIets()
 
         return binding.root
     }
