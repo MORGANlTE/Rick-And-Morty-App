@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
@@ -21,7 +22,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class LocationFragment : Fragment() {
-    private lateinit var viewModel: LocationViewModel
     private lateinit var binding: FragmentLocationBinding
 
     override fun onCreateView(
@@ -29,11 +29,24 @@ class LocationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //instantiate the viewmodel for the episodes
-        viewModel = ViewModelProvider(this).get(LocationViewModel::class.java)
 
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_location,container,false)
 
+        val locationViewModel: LocationViewModel by activityViewModels()
+
+
+        //create and set the adapter
+        val adapter = LocationAdapter()
+        binding.locationRecycler.adapter = adapter
+
+        //set an observer for the locations in the viewmodel
+        locationViewModel.locations.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                //tell the adapter that the list has changed
+                adapter.submitList(it)
+            }
+        })
         //set the menu to visible
         setHasOptionsMenu(true)
 

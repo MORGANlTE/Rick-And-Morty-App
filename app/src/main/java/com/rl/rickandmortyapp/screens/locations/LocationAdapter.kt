@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.rl.rickandmortyapp.databinding.ListItemCharacterBinding
+import com.rl.rickandmortyapp.databinding.ListItemLocationBinding
 import com.rl.rickandmortyapp.domain.Location
 
-/*
+
 class LocationAdapter :
     ListAdapter<Location, LocationAdapter.ViewHolder>(
         LocationDiffCallback()
@@ -36,7 +36,7 @@ class LocationAdapter :
 
                 // inflate and return binding
                 val binding =
-                    ListItemCharacterBinding.inflate(layoutInflater, parent, false)
+                    ListItemLocationBinding.inflate(layoutInflater, parent, false)
 
                 return ViewHolder(binding)
             }
@@ -66,4 +66,4 @@ class LocationAdapter :
         }
     }
 
-}*/
+}
