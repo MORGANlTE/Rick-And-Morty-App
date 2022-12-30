@@ -18,4 +18,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="home">Home</string>
     <string name="credits">Credits</string>
+    <string name="check_out_the_locations">Check out the locations</string>
+    <string name="locations">locations</string>
 </resources>

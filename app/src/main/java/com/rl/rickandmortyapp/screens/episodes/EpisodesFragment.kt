@@ -52,7 +52,8 @@ class EpisodesFragment : Fragment() {
     private fun setupObservers()
     {
         /** Setting up LiveData observation relationship **/
-        viewModel.episodes.observe(viewLifecycleOwner, Observer { newEpisodes ->
+        viewModel.episodes.observe(viewLifecycleOwner, Observer {
+                //newEpisodes ->
             //binding. = newEpisodes
         })
     }

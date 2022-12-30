@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homepageFragment_to_characterFragment"
             app:destination="@id/characterFragment" />
+        <action
+            android:id="@+id/action_homepageFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
     </fragment>
     <fragment
         android:id="@+id/episodesFragment"
@@ -25,4 +28,8 @@
         android:name="com.rl.rickandmortyapp.screens.character.CharacterFragment"
         android:label="@string/characters"
         tools:layout="@layout/fragment_character" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.rl.rickandmortyapp.screens.locations.LocationFragment"
+        android:label="LocationFragment" />
 </navigation>

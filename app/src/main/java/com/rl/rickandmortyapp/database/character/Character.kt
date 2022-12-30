@@ -3,8 +3,6 @@ package com.rl.rickandmortyapp.database.character
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.rl.rickandmortyapp.database.character.Character
-import com.rl.rickandmortyapp.network.character.CharacterDto
 
 @Entity(tableName = "character_table")
 data class Character(
