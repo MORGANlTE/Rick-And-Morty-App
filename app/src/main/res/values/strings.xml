@@ -20,4 +20,6 @@
     <string name="credits">Credits</string>
     <string name="check_out_the_locations">Check out the locations</string>
     <string name="locations">locations</string>
+    <string name="dimension">Dimension:</string>
+    <string name="dimension_dubbelpunt">Dimension:</string>
 </resources>

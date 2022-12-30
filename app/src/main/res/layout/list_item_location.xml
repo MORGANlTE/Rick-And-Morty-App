@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="location"
+            type="com.rl.rickandmortyapp.domain.Location" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded"
+        android:elevation="30dp"
+        android:padding="30sp">
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/whiteText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:shadowColor="#0B0B0B"
+            android:shadowDx="2"
+            android:shadowRadius="20"
+            android:text="@{location.name}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="38dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name here" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:layout_editor_absoluteX="30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/whiteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type:"
+                    android:textAlignment="center"
+                    android:textColor="#a8c57e"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/whiteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{location.type}"
+                    android:textAlignment="center"
+                    android:textSize="28dp"
+                    tools:text="Type here" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/whiteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:width="0dp"
+                    android:text="@string/dimension"
+                    android:textAlignment="center"
+                    android:textColor="#3f468c"
+                    android:textSize="20dp"
+                    tools:text="@string/dimension_dubbelpunt" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/whiteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:width="0dp"
+                    android:text="@{location.dimension}"
+                    android:textAlignment="center"
+                    android:textSize="28dp"
+                    tools:text="Dimension here" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
