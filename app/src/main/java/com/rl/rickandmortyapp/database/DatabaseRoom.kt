@@ -8,13 +8,17 @@ import com.rl.rickandmortyapp.database.character.Character
 import com.rl.rickandmortyapp.database.character.CharacterDao
 import com.rl.rickandmortyapp.database.location.Location
 import com.rl.rickandmortyapp.database.location.LocationDao
+import com.rl.rickandmortyapp.database.episode.Episode
+import com.rl.rickandmortyapp.database.episode.EpisodeDao
 
-@Database(entities = [Character::class, Location::class], version = 2, exportSchema = false)
+@Database(entities = [Character::class, Location::class, Episode::class], version = 3, exportSchema = false)
 abstract class DatabaseRoom : RoomDatabase() {
 
     //connect DB with Dao
     abstract val characterDao: CharacterDao
     abstract val locationDao: LocationDao
+    abstract val episodeDao: EpisodeDao
+
 
     // companion object to add functions to the class (the class itself, not an instance of the class)
     companion object {
