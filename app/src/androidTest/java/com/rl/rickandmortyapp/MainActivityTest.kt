@@ -14,16 +14,15 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class MainActivityTest{
 
-    //Step 1: creating global veriable
+    //creating global veriable
 
     @get:Rule var activityScenarioRule = activityScenarioRule<MainActivity>()
 
-    //Step 2: checking if our main activity layout is displayed or is visable to the user
 
 
     @Test
     fun checkActivityVisibilityTitle(){
-        onView(withText("Rick And Morty"))
+        onView(withText("Welcome to the Rick and Morty App!"))
             .check(matches(isDisplayed()))
     }
 
@@ -48,6 +47,7 @@ class MainActivityTest{
             .check(matches(isDisplayed()))
     }
 
+
     @Test
     fun checkNavigationBackToHomeScreen(){
         onView(withId(R.id.characters_button))
@@ -58,7 +58,9 @@ class MainActivityTest{
 
         Espresso.pressBack()
 
-        onView(withId(R.layout.fragment_homepage))
+        onView(withId(R.id.locations_button))
             .check(matches(isDisplayed()))
     }
+
+
 }
