@@ -1,21 +1,19 @@
 package com.rl.rickandmortyapp.screens.episodes
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
 import com.rl.rickandmortyapp.databinding.FragmentEpisodesBinding
-import com.rl.rickandmortyapp.databinding.FragmentHomepageBinding
+import jp.wasabeef.recyclerview.animators.FadeInLeftAnimator
 
-class EpisodesFragment : Fragment() {
+class EpisodeFragment : Fragment() {
 
-    private lateinit var viewModel: EpisodesViewModel
     private lateinit var binding: FragmentEpisodesBinding
 
     override fun onCreateView(
@@ -23,14 +21,22 @@ class EpisodesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //instantiate the viewmodel for the episodes
-        viewModel = ViewModelProvider(this).get(EpisodesViewModel::class.java)
 
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_episodes,container,false)
 
+        //create and set the adapter
+        val adapter = EpisodeAdapter()
+        binding.episodeRecycler.adapter = adapter
+
+        //set an observer for the episodes in the viewmodel
+        setupObserver(adapter)
+
         //set the menu to visible
         setHasOptionsMenu(true)
 
+
+        setAnimations(adapter)
         //setup observer for episodes
         //setupObservers()
 
@@ -49,12 +55,23 @@ class EpisodesFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
     }
 
-    /*private fun setupObservers()
+    private fun setupObserver(adapter: EpisodeAdapter)
     {
-        /** Setting up LiveData observation relationship **/
-        viewModel.episodes.observe(viewLifecycleOwner, Observer {
-                //newEpisodes ->
-            //binding. = newEpisodes
+        val episodeViewModel: EpisodeViewModel by activityViewModels()
+
+        episodeViewModel.episodes.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                //tell the adapter that the list has changed
+                adapter.submitList(it)
+            }
         })
-    }*/
+    }
+
+    private fun setAnimations(adapter: EpisodeAdapter)
+    {
+        val recyclerView = binding.episodeRecycler
+        recyclerView.itemAnimator = FadeInLeftAnimator()
+    }
+
+
 }
