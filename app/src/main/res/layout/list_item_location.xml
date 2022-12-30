@@ -10,6 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clickable_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:paddingBottom="8dp"
             android:shadowColor="#0B0B0B"
             android:shadowDx="2"
             android:shadowRadius="20"
@@ -36,12 +38,15 @@
             tools:text="Name here" />
 
         <LinearLayout
+            android:id="@+id/extra_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
-            tools:layout_editor_absoluteX="30dp">
+            tools:layout_editor_absoluteX="30dp"
+            tools:visibility="visible">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -56,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:text="Type:"
                     android:textAlignment="center"
-                    android:textColor="#a8c57e"
+                    android:textColor="@color/black"
                     android:textSize="20dp" />
 
                 <TextView
@@ -84,7 +89,7 @@
                     android:width="0dp"
                     android:text="@string/dimension"
                     android:textAlignment="center"
-                    android:textColor="#3f468c"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     tools:text="@string/dimension_dubbelpunt" />
 

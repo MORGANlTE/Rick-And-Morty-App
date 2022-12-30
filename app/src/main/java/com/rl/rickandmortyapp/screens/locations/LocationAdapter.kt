@@ -1,6 +1,7 @@
 package com.rl.rickandmortyapp.screens.locations
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -21,7 +22,13 @@ class LocationAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-
+        holder.binding.clickableField.setOnClickListener {
+            if (holder.binding.extraInfo.visibility == View.GONE) {
+                holder.binding.extraInfo.visibility = View.VISIBLE
+            } else {
+                holder.binding.extraInfo.visibility = View.GONE
+            }
+        }
         //bind all values using the bind method from the ViewHolder class
         holder.bind(item)
     }
