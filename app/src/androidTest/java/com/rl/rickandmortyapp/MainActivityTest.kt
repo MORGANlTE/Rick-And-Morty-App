@@ -1,5 +1,6 @@
 package com.rl.rickandmortyapp
 
+import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -44,6 +45,20 @@ class MainActivityTest{
             .perform(click())
 
         onView(withId(R.id.layout_episodes))
+            .check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun checkNavigationBackToHomeScreen(){
+        onView(withId(R.id.characters_button))
+            .perform(click())
+
+        onView(withId(R.id.layout_character))
+            .check(matches(isDisplayed()))
+
+        Espresso.pressBack()
+
+        onView(withId(R.layout.fragment_homepage))
             .check(matches(isDisplayed()))
     }
 }
