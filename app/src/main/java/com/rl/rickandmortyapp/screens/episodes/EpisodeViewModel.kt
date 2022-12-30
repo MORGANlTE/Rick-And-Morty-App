@@ -13,6 +13,7 @@ class EpisodeViewModel(application: Application) : AndroidViewModel(application)
 
     val episodes = episodeRepository.episodes
 
+
     init {
         //insert 2 characters into the db
         viewModelScope.launch {

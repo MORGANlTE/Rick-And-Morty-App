@@ -2,6 +2,8 @@ package com.rl.rickandmortyapp.screens.episodes
 
 import android.os.Bundle
 import android.view.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -34,7 +36,6 @@ class EpisodeFragment : Fragment() {
 
         //set the menu to visible
         setHasOptionsMenu(true)
-
 
         setAnimations(adapter)
         //setup observer for episodes

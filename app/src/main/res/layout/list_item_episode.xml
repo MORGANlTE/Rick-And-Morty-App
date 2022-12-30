@@ -12,16 +12,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="#807C7C"
+        android:background="@drawable/rounded2"
         android:elevation="30dp"
-        android:padding="30sp">
+        android:padding="18sp">
 
         <TextView
             android:id="@+id/episode_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{episode.episode}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,8 +33,13 @@
             android:id="@+id/episode_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="34dp"
             android:text="@{episode.name}"
+            android:shadowColor="#0B0B0B"
+            android:shadowDx="2"
+            android:shadowRadius="20"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/episode_number"
             app:layout_constraintTop_toTopOf="parent" />
