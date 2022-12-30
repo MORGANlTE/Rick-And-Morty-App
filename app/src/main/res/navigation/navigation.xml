@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/homepageFragment">
+
     <fragment
         android:id="@+id/homepageFragment"
         android:name="com.rl.rickandmortyapp.screens.main.HomepageFragment"
@@ -17,7 +18,7 @@
             app:destination="@id/characterFragment" />
         <action
             android:id="@+id/action_homepageFragment_to_locationFragment"
-            app:destination="@id/locationFragment" />
+            app:destination="@id/locationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/episodesFragment"
@@ -29,7 +30,8 @@
         android:label="@string/characters"
         tools:layout="@layout/fragment_character" />
     <fragment
-        android:id="@+id/locationFragment"
+        android:id="@+id/locationsFragment"
         android:name="com.rl.rickandmortyapp.screens.locations.LocationFragment"
-        android:label="LocationFragment" />
+        android:label="@string/locations2"
+        tools:layout="@layout/fragment_location" />
 </navigation>

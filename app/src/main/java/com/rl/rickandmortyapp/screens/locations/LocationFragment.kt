@@ -30,8 +30,10 @@ class LocationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //instantiate the viewmodel for the episodes
+        //set the menu to visible
+        setHasOptionsMenu(true)
 
+        //instantiate the viewmodel for the episodes
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_location,container,false)
 
@@ -44,8 +46,7 @@ class LocationFragment : Fragment() {
         //set an observer for the locations in the viewmodel
         setupObserver(adapter)
 
-        //set the menu to visible
-        setHasOptionsMenu(true)
+
 
         setAnimations(adapter)
 
