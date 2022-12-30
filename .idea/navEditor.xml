@@ -95,12 +95,34 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_homepageFragment_to_characterFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_homepageFragment_to_episodesFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_homepageFragment_to_locationFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="locationFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="14" />
+                            <option name="y" value="-314" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

@@ -32,7 +32,7 @@ class EpisodesFragment : Fragment() {
         setHasOptionsMenu(true)
 
         //setup observer for episodes
-        setupObservers()
+        //setupObservers()
 
         return binding.root
     }
@@ -49,12 +49,12 @@ class EpisodesFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
     }
 
-    private fun setupObservers()
+    /*private fun setupObservers()
     {
         /** Setting up LiveData observation relationship **/
         viewModel.episodes.observe(viewLifecycleOwner, Observer {
                 //newEpisodes ->
             //binding. = newEpisodes
         })
-    }
+    }*/
 }

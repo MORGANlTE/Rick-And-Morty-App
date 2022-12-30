@@ -58,6 +58,11 @@ class HomepageFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homepageFragment_to_characterFragment)
         }
 
+        //OnclickListener for the button to the locations
+        binding.locationsButton.setOnClickListener {  view: View ->
+            view.findNavController().navigate(R.id.action_homepageFragment_to_locationFragment)
+        }
+
     }
 
 }

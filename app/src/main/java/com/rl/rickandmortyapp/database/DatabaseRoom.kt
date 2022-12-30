@@ -6,9 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.rl.rickandmortyapp.database.character.Character
 import com.rl.rickandmortyapp.database.character.CharacterDao
+import com.rl.rickandmortyapp.database.location.Location
 import com.rl.rickandmortyapp.database.location.LocationDao
 
-@Database(entities = [Character::class], version = 1, exportSchema = false)
+@Database(entities = [Character::class, Location::class], version = 2, exportSchema = false)
 abstract class DatabaseRoom : RoomDatabase() {
 
     //connect DB with Dao
@@ -37,7 +38,7 @@ abstract class DatabaseRoom : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         DatabaseRoom::class.java,
-                        "character_database"
+                        "character_database",
                     ).fallbackToDestructiveMigration().build()
                     INSTANCE = instance
                 }
