@@ -5,13 +5,17 @@
     <item
         android:id="@+id/homepageFragment"
         android:title="@string/home" />
+
     <item
-        android:id="@+id/characterFragment"
-        android:title="@string/characters" />
+        android:id="@+id/locationsFragment"
+        android:title="@string/locations2" />
+
     <item
         android:id="@+id/episodesFragment"
         android:title="@string/episodes" />
+
     <item
-        android:id="@+id/locationsFragment"
-        android:title="@string/locations" />
+        android:id="@+id/characterFragment"
+        android:title="@string/characters" />
+
 </menu>
