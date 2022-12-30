@@ -10,6 +10,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
 import com.rl.rickandmortyapp.databinding.FragmentLocationBinding
+import jp.wasabeef.recyclerview.animators.FadeInLeftAnimator
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +35,6 @@ class LocationFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_location,container,false)
 
-        val locationViewModel: LocationViewModel by activityViewModels()
 
 
         //create and set the adapter
@@ -41,14 +42,13 @@ class LocationFragment : Fragment() {
         binding.locationRecycler.adapter = adapter
 
         //set an observer for the locations in the viewmodel
-        locationViewModel.locations.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                //tell the adapter that the list has changed
-                adapter.submitList(it)
-            }
-        })
+        setupObserver(adapter)
+
         //set the menu to visible
         setHasOptionsMenu(true)
+
+        setAnimations(adapter)
+
 
         return binding.root
     }
@@ -63,5 +63,23 @@ class LocationFragment : Fragment() {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
+    }
+
+    private fun setupObserver(adapter: LocationAdapter)
+    {
+        val locationViewModel: LocationViewModel by activityViewModels()
+
+        locationViewModel.locations.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                //tell the adapter that the list has changed
+                adapter.submitList(it)
+            }
+        })
+    }
+
+    private fun setAnimations(adapter: LocationAdapter)
+    {
+        val recyclerView = binding.locationRecycler
+        recyclerView.itemAnimator = FadeInLeftAnimator()
     }
 }
