@@ -17,6 +17,9 @@ android {
             // Exclude de images directory vd documentatie (stond ni in de docs, zelf gevonden :) )
             named("main") {
                 exclude 'res/drawable**'
+                packageOptions {
+                    all().reportUndocumented = true
+                }
             }
         }
     }
@@ -99,3 +102,6 @@ dependencies {
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
 }
 
+tasks.named("dokkaHtml") {
+    suppressInheritedMembers.set(true)
+}

@@ -24,7 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         navController.navigate(R.id.homepageFragment)
     }
-    //overwriting the back button for our navhost
+
+    /**
+     * Overwrites the back button for our navhost
+     */
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return navController.navigateUp()
