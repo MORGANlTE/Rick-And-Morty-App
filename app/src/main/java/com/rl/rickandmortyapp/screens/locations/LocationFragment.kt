@@ -48,24 +48,36 @@ class LocationFragment : Fragment() {
 
 
 
-        setAnimations(adapter)
+        setAnimations()
 
 
         return binding.root
     }
-    //inflate the menu resource file
+
+    /**
+     * Inflate the menu resource file
+     *  @param menu The menu to inflate
+     *  @param inflater The inflater to use
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
 
-    //override to set the action on the menubuttons to their respective destination
+    /**
+     * Override to set the action on the menubuttons to their respective destination
+     *  @param item The menu item that is selected
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Sets up the observer to observe the location changes
+     *  @param adapter The adapter to with the locations
+     */
     private fun setupObserver(adapter: LocationAdapter)
     {
         val locationViewModel: LocationViewModel by activityViewModels()
@@ -77,8 +89,10 @@ class LocationFragment : Fragment() {
             }
         })
     }
-
-    private fun setAnimations(adapter: LocationAdapter)
+    /**
+     * Set the animation for the recyclerview (maybe more in the future)
+     */
+    private fun setAnimations()
     {
         val recyclerView = binding.locationRecycler
         recyclerView.itemAnimator = FadeInLeftAnimator()
