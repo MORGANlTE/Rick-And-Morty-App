@@ -33,19 +33,29 @@ class HomepageFragment : Fragment() {
         return binding.root
     }
 
-    //inflate the menu resource file
+   /**
+    * Inflate the menu with the inflater
+    * @param menu The menu to inflate
+    * @param inflater The inflater to give to the menu
+    */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
 
-    //override to set the action on the menubuttons to their respective destination
+    /**
+     * Override to set the action on the menubuttons to their respective destination
+     *  @param item Item that is selected
+    */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
+    /**
+     * sets up all the listeners for the buttons
+     */
     private fun setupButtons() {
 
         //OnclickListener for the button to the episodes

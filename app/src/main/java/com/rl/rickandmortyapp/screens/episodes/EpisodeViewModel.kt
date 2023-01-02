@@ -13,9 +13,10 @@ class EpisodeViewModel(application: Application) : AndroidViewModel(application)
 
     val episodes = episodeRepository.episodes
 
-
+    /**
+     * On initialization of the viewmodel we want to refresh the episodes
+     */
     init {
-        //insert 2 characters into the db
         viewModelScope.launch {
             episodeRepository.refreshEpisodes()
         }

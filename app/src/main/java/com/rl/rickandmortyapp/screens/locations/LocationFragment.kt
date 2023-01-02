@@ -13,19 +13,15 @@ import com.rl.rickandmortyapp.databinding.FragmentLocationBinding
 import jp.wasabeef.recyclerview.animators.FadeInLeftAnimator
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
- * A simple [Fragment] subclass.
- * Use the [LocationFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * The locations fragment
  */
 class LocationFragment : Fragment() {
     private lateinit var binding: FragmentLocationBinding
-
+    /**
+     * On creation of the view we setup the binding, the adapter, the observers and the animations
+     * @param inflater The inflater
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,24 +44,36 @@ class LocationFragment : Fragment() {
 
 
 
-        setAnimations(adapter)
+        setAnimations()
 
 
         return binding.root
     }
-    //inflate the menu resource file
+
+    /**
+     * Inflate the menu resource file
+     *  @param menu The menu to inflate
+     *  @param inflater The inflater to use
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
 
-    //override to set the action on the menubuttons to their respective destination
+    /**
+     * Override to set the action on the menubuttons to their respective destination
+     *  @param item The menu item that is selected
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Sets up the observer to observe the location changes
+     *  @param adapter The adapter to with the locations
+     */
     private fun setupObserver(adapter: LocationAdapter)
     {
         val locationViewModel: LocationViewModel by activityViewModels()
@@ -77,8 +85,10 @@ class LocationFragment : Fragment() {
             }
         })
     }
-
-    private fun setAnimations(adapter: LocationAdapter)
+    /**
+     * Set the animation for the recyclerview (maybe animations more in the future)
+     */
+    private fun setAnimations()
     {
         val recyclerView = binding.locationRecycler
         recyclerView.itemAnimator = FadeInLeftAnimator()

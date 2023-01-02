@@ -1,13 +1,28 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.dokka'
 }
 
 apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jetbrains.dokka'
 
 android {
     namespace 'com.rl.rickandmortyapp'
     compileSdk 32
+
+    dokkaHtml{
+        dokkaSourceSets {
+            moduleName = "Rick and Morty App Docs"
+            // Exclude de images directory vd documentatie (stond ni in de docs, zelf gevonden :) )
+            named("main") {
+                exclude 'res/drawable**'
+                packageOptions {
+                    all().reportUndocumented = true
+                }
+            }
+        }
+    }
 
     dataBinding {
         enabled = true
@@ -74,7 +89,6 @@ dependencies {
 
 
     //Testing
-
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
@@ -86,5 +100,13 @@ dependencies {
 
     //Coil for images
     implementation "io.coil-kt:coil:2.2.2"
+    
+    //DOKKA
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
+
 }
 
+tasks.named("dokkaHtml") {
+    suppressInheritedMembers.set(true)
+    outputDirectory.set(file("../documentation/html"))
+}

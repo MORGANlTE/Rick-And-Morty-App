@@ -14,7 +14,9 @@ class EpisodeRepository(private val db: DatabaseRoom) {
     val episodes = Transformations.map(db.episodeDao.getAllEpisodes()) {
         it.asDomain()
     }
-
+    /**
+     * Refreshes the current episodes & inserts them into the database
+     */
     suspend fun refreshEpisodes() {
         withContext(Dispatchers.IO) {
             try {
