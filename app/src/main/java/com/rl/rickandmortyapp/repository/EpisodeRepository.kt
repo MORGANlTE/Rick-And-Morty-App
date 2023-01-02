@@ -17,7 +17,7 @@ class EpisodeRepository(private val db: DatabaseRoom) {
         it.asDomain()
     }
     /**
-     * Refreshes the current episodes & inserts them into the database
+     * Refreshes the current episodes & inserts them into the local database
      */
     suspend fun refreshEpisodes() {
         withContext(Dispatchers.IO) {

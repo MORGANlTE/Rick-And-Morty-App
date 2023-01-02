@@ -17,7 +17,7 @@ class CharacterRepository(private val db: DatabaseRoom) {
         it.asDomain()
     }
     /**
-     * Refreshes the current characters & inserts them into the database
+     * Refreshes the current characters & inserts them into the local database
      */
     suspend fun refreshCharacters() {
         withContext(Dispatchers.IO) {

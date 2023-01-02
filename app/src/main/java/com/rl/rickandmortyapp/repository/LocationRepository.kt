@@ -17,7 +17,7 @@ class LocationRepository(private val db: DatabaseRoom) {
         it.asDomain()
     }
     /**
-     * Refreshes the current locations & inserts them into the database
+     * Refreshes the current locations & inserts them into the local database
      */
     suspend fun refreshLocations() {
         withContext(Dispatchers.IO) {
