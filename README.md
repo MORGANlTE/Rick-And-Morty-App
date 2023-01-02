@@ -14,3 +14,8 @@ To run the application you do not need login credentials.
 |   1   | Laurens | Arnauts |
 |   2   |      Lukas      |    Van Dorpe    |
 |   3   |      Remco      |    De Smedt    |
+
+
+### Preview homescreen:
+
+![image](https://user-images.githubusercontent.com/58339374/210237880-b78d36b8-1530-4311-b1e6-7820194c640c.png)
