@@ -18,10 +18,14 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
 
     val characters = characterRepository.characters
 
+    /**
+     * On initialization of the viewmodel we want to refresh the characters
+     */
     init {
-        //insert 2 characters into the db
+
         viewModelScope.launch {
             characterRepository.refreshCharacters()
+//          insert 2 characters into the db:
 //            insert(
 //                Character(
 //                    1L, "de rick", "alive",

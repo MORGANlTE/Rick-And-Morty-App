@@ -25,7 +25,9 @@ private val retrofit =
         .client(client)
         .build()
 
-//interface for the different HTTP methods
+/**
+ * Get the locations using HTTP
+ */
 interface CharacterApiService{
 //    @GET("?page=2")
     @GET(".")

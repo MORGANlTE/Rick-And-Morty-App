@@ -25,8 +25,10 @@ private val retrofit =
         .client(client)
         .build()
 
-//interface for the different HTTP methods
 interface EpisodeApiService{
+/**
+ * Get the locations using HTTP
+ */
     @GET(".")
     fun getEpisodes() : Deferred<EpisodeResponse>
 }

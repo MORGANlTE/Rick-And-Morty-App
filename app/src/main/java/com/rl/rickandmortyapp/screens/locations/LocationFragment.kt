@@ -13,19 +13,15 @@ import com.rl.rickandmortyapp.databinding.FragmentLocationBinding
 import jp.wasabeef.recyclerview.animators.FadeInLeftAnimator
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
- * A simple [Fragment] subclass.
- * Use the [LocationFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * The locations fragment
  */
 class LocationFragment : Fragment() {
     private lateinit var binding: FragmentLocationBinding
-
+    /**
+     * On creation of the view we setup the binding, the adapter, the observers and the animations
+     * @param inflater The inflater
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -90,7 +86,7 @@ class LocationFragment : Fragment() {
         })
     }
     /**
-     * Set the animation for the recyclerview (maybe more in the future)
+     * Set the animation for the recyclerview (maybe animations more in the future)
      */
     private fun setAnimations()
     {

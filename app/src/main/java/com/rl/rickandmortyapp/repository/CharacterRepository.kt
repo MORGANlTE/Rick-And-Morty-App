@@ -14,7 +14,9 @@ class CharacterRepository(private val db: DatabaseRoom) {
     val characters = Transformations.map(db.characterDao.getAllCharacters()) {
         it.asDomain()
     }
-
+    /**
+     * Refreshes the current characters & inserts them into the database
+     */
     suspend fun refreshCharacters() {
         withContext(Dispatchers.IO) {
             try {

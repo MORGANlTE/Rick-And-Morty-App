@@ -12,9 +12,14 @@ import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
 import com.rl.rickandmortyapp.database.DatabaseRoom
 import com.rl.rickandmortyapp.databinding.FragmentCharacterBinding
-
+/**
+ * The character fragment
+ */
 class CharacterFragment : Fragment() {
-
+    /**
+     * On creation of the view we setup the binding, the adapter and the observers
+     * @param inflater The inflater
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,13 +55,20 @@ class CharacterFragment : Fragment() {
     }
 
 
-    //inflate the menu resource file
+    /**
+     * Inflate the menu resource file
+     *  @param menu The menu to inflate
+     *  @param inflater The inflater to use
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
 
-    //override to set the action on the menubuttons to their respective destination
+    /**
+     * Override to set the action on the menubuttons to their respective destination
+     *  @param item The menu item that is selected
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)

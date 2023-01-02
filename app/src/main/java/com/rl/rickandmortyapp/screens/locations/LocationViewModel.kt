@@ -14,9 +14,10 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
     val locations = locationRepository.locations
 
 
-
+    /**
+     * On initialization of the viewmodel we want to refresh the locations
+     */
     init {
-        //insert locations into the db
         viewModelScope.launch {
             locationRepository.refreshLocations()
         }

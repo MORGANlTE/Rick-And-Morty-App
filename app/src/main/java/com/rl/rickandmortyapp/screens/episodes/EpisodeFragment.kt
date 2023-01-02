@@ -13,11 +13,17 @@ import androidx.navigation.ui.NavigationUI
 import com.rl.rickandmortyapp.R
 import com.rl.rickandmortyapp.databinding.FragmentEpisodesBinding
 import jp.wasabeef.recyclerview.animators.FadeInLeftAnimator
-
+/**
+ * The episodes fragment
+ */
 class EpisodeFragment : Fragment() {
 
     private lateinit var binding: FragmentEpisodesBinding
 
+    /**
+     * On creation of the view we setup the binding, the adapter, the observers and the animations
+     * @param inflater The inflater
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,19 +49,30 @@ class EpisodeFragment : Fragment() {
 
         return binding.root
     }
-    //inflate the menu resource file
+    /**
+     * Inflate the menu resource file
+     *  @param menu The menu to inflate
+     *  @param inflater The inflater to use
+     */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
 
-    //override to set the action on the menubuttons to their respective destination
+    /**
+     * Override to set the action on the menubuttons to their respective destination
+     *  @param item The menu item that is selected
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
+    /**
+     * Sets up the observer to observe the episode changes
+     *  @param adapter The adapter to with the episodes
+     */
     private fun setupObserver(adapter: EpisodeAdapter)
     {
         val episodeViewModel: EpisodeViewModel by activityViewModels()
@@ -68,6 +85,9 @@ class EpisodeFragment : Fragment() {
         })
     }
 
+    /**
+     * Set the animation for the recyclerview
+     */
     private fun setAnimations(adapter: EpisodeAdapter)
     {
         val recyclerView = binding.episodeRecycler

@@ -25,9 +25,10 @@ private val retrofit =
         .client(client)
         .build()
 
-//interface for the different HTTP methods
 interface LocationApiService{
-
+    /**
+     * Get the locations using HTTP
+     */
     @GET(".")
     fun getLocations() : Deferred<LocationResponse>
 }
