@@ -15,7 +15,7 @@ class LocationRepository(private val db: DatabaseRoom) {
         it.asDomain()
     }
 
-    suspend fun refreshCharacters() {
+    suspend fun refreshLocations() {
         withContext(Dispatchers.IO) {
             try {
                 //get characters from api
