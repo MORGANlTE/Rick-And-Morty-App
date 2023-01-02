@@ -216,6 +216,8 @@ $dokka.location:com.rl.rickandmortyapp.screens.main/HomepageFragment/onCreateOpt
 $dokka.location:com.rl.rickandmortyapp.screens.main/HomepageFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp.screens.main/-homepage-fragment/on-create-view.html
 $dokka.location:com.rl.rickandmortyapp.screens.main/HomepageFragment/onOptionsItemSelected/#android.view.MenuItem/PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp.screens.main/-homepage-fragment/on-options-item-selected.html
 $dokka.location:com.rl.rickandmortyapp////PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/index.html
+$dokka.location:com.rl.rickandmortyapp/BindingAdaptersKt///PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/-binding-adapters-kt/index.html
+$dokka.location:com.rl.rickandmortyapp/BindingAdaptersKt/bindImage/#android.widget.ImageView#kotlin.String?/PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/-binding-adapters-kt/bind-image.html
 $dokka.location:com.rl.rickandmortyapp/MainActivity///PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/-main-activity/index.html
 $dokka.location:com.rl.rickandmortyapp/MainActivity/MainActivity/#/PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/-main-activity/-main-activity.html
 $dokka.location:com.rl.rickandmortyapp/MainActivity/onSupportNavigateUp/#/PointingToDeclaration/-rick and -morty -app -docs/com.rl.rickandmortyapp/-main-activity/on-support-navigate-up.html
