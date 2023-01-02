@@ -8,11 +8,16 @@ import androidx.room.Query
 
 @Dao
 interface LocationDao {
-    //to insert the locations from the api
+    /**
+     * Inserts the locations from the api
+     * @param locations The locations to insert
+     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(locations:Array<Location>)
 
-    //get all of the locations into the db
+    /**
+     * Gets all the locations from the api
+     */
     @Query("SELECT * FROM location_table ORDER BY locationId ASC")
     fun getAllLocations(): LiveData<List<Location>>
 }

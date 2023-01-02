@@ -21,7 +21,9 @@ data class Location(
     var dimension: String,
 )
 
-//convert a list of DB objects to a list of Domain objects
+/**
+ * convert a list of DB objects to a list of Domain objects
+ */
 fun List<Location>.asDomain(): List<com.rl.rickandmortyapp.domain.Location> {
     return map {
         com.rl.rickandmortyapp.domain.Location(

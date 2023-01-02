@@ -14,7 +14,9 @@ class LocationRepository(private val db: DatabaseRoom) {
     val locations = Transformations.map(db.locationDao.getAllLocations()) {
         it.asDomain()
     }
-
+    /**
+     * Refreshes the current locations & inserts them into the database
+     */
     suspend fun refreshLocations() {
         withContext(Dispatchers.IO) {
             try {

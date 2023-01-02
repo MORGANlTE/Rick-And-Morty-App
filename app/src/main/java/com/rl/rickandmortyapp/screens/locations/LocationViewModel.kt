@@ -16,7 +16,7 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
 
 
     init {
-        //insert 2 characters into the db
+        //insert locations into the db
         viewModelScope.launch {
             locationRepository.refreshLocations()
         }
