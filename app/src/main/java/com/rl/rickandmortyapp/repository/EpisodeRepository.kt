@@ -10,7 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class EpisodeRepository(private val db: DatabaseRoom) {
-    //get episodes from db and map them to domain objects
+    /**
+     * Gets episodes from db and maps them to domain objects
+     */
     val episodes = Transformations.map(db.episodeDao.getAllEpisodes()) {
         it.asDomain()
     }

@@ -22,7 +22,7 @@ data class Location(
 )
 
 /**
- * convert a list of DB objects to a list of Domain objects
+ * Converts a list of DB objects to a list of Domain objects
  */
 fun List<Location>.asDomain(): List<com.rl.rickandmortyapp.domain.Location> {
     return map {

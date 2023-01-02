@@ -10,7 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class LocationRepository(private val db: DatabaseRoom) {
-    //get locations from db and map them to domain objects
+    /**
+     * Gets locations from db and maps them to domain objects
+     */
     val locations = Transformations.map(db.locationDao.getAllLocations()) {
         it.asDomain()
     }

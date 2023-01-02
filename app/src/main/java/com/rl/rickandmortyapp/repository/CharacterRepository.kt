@@ -10,7 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class CharacterRepository(private val db: DatabaseRoom) {
-    //get characters from db and map them to domain objects
+    /**
+     * Gets characters from db and maps them to domain objects
+     */
     val characters = Transformations.map(db.characterDao.getAllCharacters()) {
         it.asDomain()
     }

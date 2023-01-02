@@ -16,7 +16,9 @@ data class Episode(
     var episode:  String,
 )
 
-//convert a list of DB objects to a list of Domain objects
+/**
+ * Converts a list of DB objects to a list of Domain objects
+ */
 fun List<Episode>.asDomain(): List<com.rl.rickandmortyapp.domain.Episode> {
     return map {
         com.rl.rickandmortyapp.domain.Episode(

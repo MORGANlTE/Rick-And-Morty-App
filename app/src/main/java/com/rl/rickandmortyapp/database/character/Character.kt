@@ -25,7 +25,9 @@ data class Character(
     var origin: String, //origin.name, bv 'Earth (C-500A)'
 )
 
-//convert a list of DB objects to a list of Domain objects
+/**
+ * Converts a list of DB objects to a list of Domain objects
+ */
 fun List<Character>.asDomain(): List<com.rl.rickandmortyapp.domain.Character> {
     return map {
         com.rl.rickandmortyapp.domain.Character(
