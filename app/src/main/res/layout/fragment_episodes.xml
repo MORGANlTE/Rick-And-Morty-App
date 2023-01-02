@@ -17,7 +17,7 @@
             android:paddingLeft="0sp"
             android:text="@string/episodes"
             android:textAlignment="center"
-            android:textColor="#43A44B"
+            android:textColor="@color/white"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
